@@ -6,10 +6,15 @@
     */
 
     //Entrada
-
+    let usuário = prompt("Informe um nome de usuário:").trim();
+    let senha = prompt("Informe sua senha:").trim();
 
     //Processamento
-
+    while (usuário == senha) {
+        alert(`ERRO NO SISTEMA, ALGUÉM ME DESCONFIGUROU!!`);
+        usuário = prompt("Informe um nome de usuário:").trim();
+        senha = prompt("Informe sua senha:").trim();
+    }
 
     //Saída
 

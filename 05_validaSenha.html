@@ -6,9 +6,21 @@
     */
 
     //Entrada
-
+    let senha = "";
 
     //Processamento
+    do {
+        senha = Number(prompt("Informe uma senha formada por números:").trim().length);
+        while (!Number.isInteger(senha)) {
+        senha = Number(prompt("Informe uma senha formada por números:").trim().length);
+        while (senha == 4 && Number.isInteger(senha)){
+            alert(`Senha Correta`);
+        }
+        while (senha < 4 || senha > 4 && !Number.isInteger(senha)){
+            alert(`Senha Incorreta`)
+        }
+    }
+    } while (senha < 4 || senha > 4);
 
 
     //Saída

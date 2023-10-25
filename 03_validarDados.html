@@ -11,9 +11,40 @@
     */
 
     //Entrada
+    let nome = prompt("Informe seu nome:").trim().length;
+    while (nome < 3) {
+        alert(`ERRO!!, Informe um nome maior que 3 caracteres`);
+        nome = prompt("Informe seu nome:").trim().length;
+    }
+
+    let idade = Number(prompt("Informe sua idade:").trim());
+    while (idade < 0 || idade > 150) {
+        alert(`ERRO!!, Informe uma idade entre 0 e 150`);
+        idade = Number(prompt("Informe sua idade:").trim());
+    }
+
+    let salario = Number(prompt("Informe seu salário:").trim());
+    while (salario < 0) {
+        alert(`ERRO!!, Informe um salário maior que 0`);
+        salario = Number(prompt("Informe seu salário:").trim())
+    }
+
+    let sexo = prompt("Informe seu sexo, usando F-feminino e M-masculino:").toLowerCase();
+    while (sexo != "f" && sexo != "m") {
+        alert(`ERRO!!, Informe F-feminino ou M-masculino`);
+        sexo = prompt("Informe seu sexo, usando F-feminino e M-masculino:").toLowerCase();
+    }
+
+    let estadoC = prompt("Informe seu estado civil, usando S-solteiro, C-casado, V-viuvo e D-divorciado:").toLowerCase();
+    while (estadoC != "s" && estadoC != "c" && estadoC != "v" && estadoC != "d") {
+        alert(`ERRO!!, Informe S-solteiro, C-casado, V-viuvo e D-divorciado`);
+        estadoC = prompt("Informe seu estado civil, usando S-solteiro, C-casado, V-viuvo e D-divorciado:").toLowerCase();
+    }
 
 
-    //Processamento
+
+
+
 
 
     //Saída
