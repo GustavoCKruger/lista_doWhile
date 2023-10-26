@@ -13,19 +13,60 @@
     */
 
     //Entrada
-    let salarios;
+
     let idade;
     let sexo;
+    let salario;
+    let somaSalarios = 0;
+    let maiorIdade = -1;
+    let menorIdade = Infinity;
+    let quantMulheres = 0;
+    let menorSalario = Infinity;
+    let pessoaMenorSalario = '';
+    let quantSalario;
 
     //Processamento
-    while(true){
-        idade = Number(prompt("Informe a sua idade:"));
-        sexo = prompt("Informe seu sexo M-masculino ou F-feminino:").toLowerCase;
-        salarios = Number(prompt("Informe seu salário:"));
+    
+    while (true) {
+        idade = parseInt(prompt("Informe a sua idade:"));
+
+        if (idade < 0) {
+            break; 
+        }
+
+        sexo = prompt("Informe seu sexo (M-masculino ou F-feminino):").toUpperCase();
+        salario = parseFloat(prompt("Informe seu salário:"));
+
+        quantSalario++;
+        somaSalarios += salario;
+        
+        
+        if (idade > maiorIdade) {
+            maiorIdade = idade;
+        }
+        if (idade < menorIdade) {
+            menorIdade = idade;
+        }
 
         
+        if (sexo === "F") {
+            quantMulheres++;
+        }
+
+        
+        if (salario < menorSalario) {
+            menorSalario = salario;
+            pessoaMenorSalario = `Idade: ${idade}, Sexo: ${sexo}`;
+        }
     }
 
-    //Saída
+    
+    let mediaSalarios = somaSalarios / quantSalario;
+
+    //Saída 
+
+    alert(`A média dos salários do grupo é: ${mediaSalarios} \nA maior idade do grupo é: ${maiorIdade} \nA menor idade do grupo é: ${menorIdade} \nA quantidade de mulheres na região é: ${quantMulheres} \nInformações da pessoa com menor salário: ${pessoaMenorSalario}`);
+    
+    /*Eu só preciso de ajuda na hora de calcular a media!*/
 
 </script>
