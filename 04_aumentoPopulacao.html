@@ -6,11 +6,17 @@
     */
 
     //Entrada
-
+    let paisA = 80000;
+    let paisB = 200000;
+    let anos = 0;
 
     //Processamento
-
+    do{
+        paisA = paisA + (paisA * 0.03);
+        paisB = paisB + (paisB * 0.015);
+        anos++;
+    }while(paisB > paisA);
 
     //Saída
-
+    alert(`Levara ${anos} anos para o pais A ultrapassar o pais B`)
 </script>

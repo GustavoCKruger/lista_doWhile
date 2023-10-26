@@ -20,9 +20,46 @@
     */
 
     //Entrada
-
-
+    let CandJoao = 0;
+    let CandMaria = 0;
+    let nulo = 0;
+    let branco = 0;
     //Processamento
+
+    while (true) {
+        let votos = Number(prompt("Vote: 1. Candidato Joãozinho, 2. Candidato Mariazinha, 3. Nulo e 4. Branco:"));
+        if(votos == 1){
+            CandJoao++;
+        }
+        if(votos == 2){
+            CandMaria++;
+        }
+        if(votos == 3){
+            nulo++;
+        }
+        if(votos == 4){
+            branco++;
+        }
+        if(isNaN(votos)){
+            alert(`Informe um dos candidatos acima:`);
+            votos = Number(prompt("Vote: 1. Candidato Joãozinho, 2. Candidato Mariazinha, 3. Nulo e 4. Branco:"));
+        }
+
+        if(votos == 0){
+            let porcNulo = (nulo / (nulo + branco + CandJoao + CandMaria)) * 100;
+            let porcBranco = (branco / (branco + nulo + CandJoao + CandMaria)) * 100; 
+            alert(`Joãozinho recebeu: ${CandJoao} votos; \nMariazinha recebeu: ${CandMaria} votos; \n${porcNulo.toFixed(2)}% de votos nulos \n${porcBranco.toFixed(2)}% de votos em brancos`);
+            if(CandJoao > CandMaria){
+                alert(`O candidato Joãozinho foi o vencedor!`);
+            }
+            else if(CandMaria > CandJoao){
+                alert(`A candidata Mariazinha foi a vencedora!`);
+            }
+            else if(CandJoao == CandMaria){
+                alert(`Deu empate, bora de 2 turno!`);
+            }
+        }
+    }
 
 
     //Saída
